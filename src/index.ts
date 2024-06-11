@@ -1,4 +1,4 @@
-import express, { Express, Request, Response } from "express";
+import express, { Express, Request, Response, json, urlencoded } from "express";
 import path from "path";
 import { config } from "dotenv";
 import { createStream } from "rotating-file-stream";
@@ -25,6 +25,13 @@ app.use(morgan(logFormat, { stream: accessLogStream }));
 
 // Enable Cross Origin Resource Sharing to specified origins
 app.use(cors(corsOptions));
+
+// parse incoming request with url encoded payload
+// extended - true =>
+app.use(urlencoded({ extended: true }));
+
+// Parse incoming request with json payload
+app.use(json());
 
 // Define routes
 app.use("/api/vehicles", vehicleRouter);
