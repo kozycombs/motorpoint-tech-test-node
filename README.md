@@ -68,7 +68,7 @@ Start the development server
 Runs the app in the development mode.\
 Open [http://localhost:3500](http://localhost:3500) in Postman / Thunder client for vscode to test the api endpoint.
 
-### Endpoint
+### Endpoints
 
 - /api/vehicles - Get all vehicles
 - /api/vehicles/make - Get the make of all vehicles
